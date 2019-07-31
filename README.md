@@ -36,14 +36,23 @@ Similarly for inventory and account management we can think for multiple crud op
 
 To make documentation easy we can work with tools like **Swagger**
 
-This project also needs to configure **application.properties** with server setting like
+This project also needs to configure **application.properties** with server setting like (sample included)
 
-#application
+**#application**
+
+
 spring.application.name=ecomApplication 
+
+
 server.port=8090
 
-#Mongo DB
+
+
+**#Mongo DB**
+
 spring.data.mongodb.port=27017
+
 spring.data.mongodb.host=localhost
+
 spring.data.mongodb.database=myDatabase
 
