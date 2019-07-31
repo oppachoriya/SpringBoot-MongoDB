@@ -15,7 +15,7 @@ import com.pachoriya.ecom.service.AccountService;
 public class AccountController {
 
 	final AccountService accountService;
-	
+
 	/**
 	 * 
 	 * @param accountService
@@ -23,8 +23,8 @@ public class AccountController {
 	public AccountController(AccountService accountService) {
 		super();
 		this.accountService = accountService;
-    }
-	
+	}
+
 	/**
 	 * 
 	 * @return
@@ -32,10 +32,18 @@ public class AccountController {
 	@GetMapping("all")
 	public List<Account> listAllAccounts( ) {
 		try {
-            return this.accountService.getAllAccount();
-        } catch (Exception e) {
-            //Log error
-            return new ArrayList<Account>();
-        }
+			return this.accountService.getAllAccount();
+		} catch (Exception e) {
+			//Log error
+			return new ArrayList<Account>();
+		}
 	}
+	
+	/**
+	 * Few other methods which we can implement 
+	 * 1. updateAccountDetails
+	 * 2. removeAccount
+	 * 3. validationAccount
+	 * 4. searchAccount 
+	 */
 }

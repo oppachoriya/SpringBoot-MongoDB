@@ -21,7 +21,7 @@ import com.pachoriya.ecom.service.InventoryService;
 @RestController
 @RequestMapping("/rest/inventory")
 public class InventoryController {
-	
+
 	final InventoryService inventoryService;
 
 	/**
@@ -41,4 +41,12 @@ public class InventoryController {
 			return new ArrayList<Inventory>();
 		}
 	}
+	
+
+	/**
+	 * Few other methods which we can implement 
+	 * 1. updateInventoryDetails
+	 * 2. removeInventory
+	 * 3. validationInventory
+	 */
 }

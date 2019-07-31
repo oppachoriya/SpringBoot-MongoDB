@@ -36,7 +36,7 @@ public class OrderController {
 		super();
 		this.orderService = orderService;
 	} 
-	
+
 	@GetMapping("/all")
 	public List<Order> listAllOrder( ) {
 		try {
@@ -46,19 +46,19 @@ public class OrderController {
 			return new ArrayList<Order>();
 		}
 	}
-	
+
 	@PostMapping("/add")
-    public ResponseEntity<Order> createOrder(@RequestBody Order order) throws Exception {
-        ResponseEntity<Order> result;
-        try {
-            this.orderService.createOrder(order);
-            result = new ResponseEntity<>(order, HttpStatus.OK);
-        } catch (Exception e) {
-            result = new ResponseEntity<>(order, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-        return result;
-    }
-	
+	public ResponseEntity<Order> createOrder(@RequestBody Order order) throws Exception {
+		ResponseEntity<Order> result;
+		try {
+			this.orderService.createOrder(order);
+			result = new ResponseEntity<>(order, HttpStatus.OK);
+		} catch (Exception e) {
+			result = new ResponseEntity<>(order, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return result;
+	}
+
 	@GetMapping("/searchOrderByEmail/emailId{emailId}")
 	public List<Order> searchOrderByEmail(@PathVariable String emailId ) {
 		try {
@@ -67,11 +67,20 @@ public class OrderController {
 			//Log error
 			return new ArrayList<Order>();
 		}
-    }
-	
+	}
+
 	@GetMapping("/searchOrderByProductName/productName{productName}")
-	public List<Order> searchOrderByProductName(@PathVariable String productName) {
-		//To do 
-    }
+	public ResponseEntity<Order> searchOrderByProductName(@PathVariable String productName) {
+		//To do , this  method can be used for search by product name
+		Order order = null; 
+		return new ResponseEntity<>(order, HttpStatus.OK);
+	}
 	
+
+	/**
+	 * Few other methods which we can implement 
+	 * 1. updateOrderDetails
+	 * 2. removeOrder 
+	 */
+
 }
